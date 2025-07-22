@@ -1,11 +1,8 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
-import Dashboard from "./Dashboard";
+import EnhancedDashboard from "./EnhancedDashboard";
 
 const Index: React.FC = () => {
-  // For now, we'll just redirect to the dashboard
-  // In a real app, this could check authentication status
-  return <Dashboard />;
+  return <EnhancedDashboard />;
 };
 
 export default Index;
