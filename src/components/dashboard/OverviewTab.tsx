@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "next/link";
-import StreakCounter from "@/components/gamification/StreakCounter";
+import Link from "next/link";
+import StreakCounter from "@/components/dashboard/StreakCounter";
 import StudyStreak from "@/components/gamification/StudyStreak";
 import CourseCard from "./CourseCard";
 import { SAMPLE_COURSES } from "@/constants/dashboard";

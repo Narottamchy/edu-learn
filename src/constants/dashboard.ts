@@ -1,4 +1,4 @@
-import { Calculator, Atom, Zap, Cpu, Database, Trophy } from "lucide-react";
+import { Calculator, Atom, Zap, Cpu, Database, Trophy, Star, Award } from "lucide-react";
 
 export const DASHBOARD_CONSTANTS = {
   STREAK_GOALS: {

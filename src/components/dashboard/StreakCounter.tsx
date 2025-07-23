@@ -10,12 +10,12 @@ interface StreakCounterProps {
   maxProgress: number;
 }
 
-const StreakCounter: React.FC<StreakCounterProps> = ({
+export default function StreakCounter({
   streak,
   level,
   progress,
   maxProgress,
-}) => {
+}: StreakCounterProps) {
   const progressPercentage = (progress / maxProgress) * 100;
 
   return (
@@ -57,6 +57,4 @@ const StreakCounter: React.FC<StreakCounterProps> = ({
       </div>
     </div>
   );
-};
-
-export default StreakCounter;
+}

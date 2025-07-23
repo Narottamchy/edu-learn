@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Trophy, BarChart3, Users, Bot, PenTool } from "lucide-react";
-import { Link } from "next/link";
+import { Trophy, BarChart3, Users, Bot, Edit } from "lucide-react";
+import Link from "next/link";
 
 import Layout from "@/components/layout";
 import SmartBreadcrumb from "@/components/navigation/SmartBreadcrumb";
@@ -62,7 +62,7 @@ export default function Dashboard() {
               AI Assistant
             </TabsTrigger>
             <TabsTrigger value={DASHBOARD_CONSTANTS.TAB_VALUES.TOOLS}>
-              <PenTool className="h-4 w-4 mr-1" />
+              <Edit className="h-4 w-4 mr-1" />
               Tools
             </TabsTrigger>
           </TabsList>
