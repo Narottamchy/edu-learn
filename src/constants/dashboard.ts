@@ -1,0 +1,122 @@
+import { Calculator, Atom, Zap, Cpu, Database, Trophy } from "lucide-react";
+
+export const DASHBOARD_CONSTANTS = {
+  STREAK_GOALS: {
+    DAILY_MINIMUM: 1,
+    WEEKLY_TARGET: 5,
+    MONTHLY_TARGET: 20,
+  },
+  MASTERY_LEVELS: {
+    MASTERED: "mastered",
+    PROFICIENT: "proficient", 
+    FAMILIAR: "familiar",
+    ATTEMPTED: "attempted",
+    NOT_STARTED: "notStarted",
+  } as const,
+  ACHIEVEMENT_RARITIES: {
+    COMMON: "common",
+    RARE: "rare", 
+    EPIC: "epic",
+    LEGENDARY: "legendary",
+  } as const,
+  TAB_VALUES: {
+    OVERVIEW: "overview",
+    ACHIEVEMENTS: "achievements",
+    ANALYTICS: "analytics", 
+    SOCIAL: "social",
+    AI_ASSISTANT: "ai-assistant",
+    TOOLS: "tools",
+  } as const,
+} as const;
+
+export const SAMPLE_COURSES = [
+  {
+    id: "basic-geometry",
+    title: "Basic geometry and measurement",
+    icon: Calculator,
+    progress: 45,
+    masteryLevel: DASHBOARD_CONSTANTS.MASTERY_LEVELS.FAMILIAR,
+    unitsCount: 14,
+    skillsCount: 127,
+    isStarted: true,
+  },
+  {
+    id: "algebra-basics", 
+    title: "Algebra basics",
+    icon: Calculator,
+    progress: 20,
+    masteryLevel: DASHBOARD_CONSTANTS.MASTERY_LEVELS.ATTEMPTED,
+    unitsCount: 10,
+    skillsCount: 98,
+    isStarted: true,
+  },
+  {
+    id: "electrical-engineering",
+    title: "Electrical engineering", 
+    icon: Cpu,
+    progress: 10,
+    masteryLevel: DASHBOARD_CONSTANTS.MASTERY_LEVELS.ATTEMPTED,
+    unitsCount: 12,
+    skillsCount: 145,
+    isStarted: true,
+  },
+  {
+    id: "circuit-analysis",
+    title: "Circuit analysis",
+    icon: Zap,
+    unitsCount: 8,
+    skillsCount: 76,
+  },
+  {
+    id: "database-systems",
+    title: "Database Systems",
+    description: "Learn about database design and management",
+    icon: Database,
+    unitsCount: 6,
+    skillsCount: 42,
+  },
+  {
+    id: "physics-mechanics",
+    title: "Physics: Mechanics", 
+    description: "Learn about forces, motion, and energy",
+    icon: Atom,
+    unitsCount: 8,
+    skillsCount: 64,
+  },
+] as const;
+
+export const SAMPLE_ACHIEVEMENTS = [
+  {
+    id: "1",
+    title: "First Steps",
+    description: "Complete your first lesson",
+    icon: Trophy,
+    progress: 1,
+    maxProgress: 1,
+    isUnlocked: true,
+    rarity: DASHBOARD_CONSTANTS.ACHIEVEMENT_RARITIES.COMMON,
+    points: 100,
+  },
+  {
+    id: "2", 
+    title: "Week Warrior",
+    description: "Study for 7 days in a row",
+    icon: Zap,
+    progress: 3,
+    maxProgress: 7,
+    isUnlocked: false,
+    rarity: DASHBOARD_CONSTANTS.ACHIEVEMENT_RARITIES.RARE,
+    points: 500,
+  },
+  {
+    id: "3",
+    title: "Math Master", 
+    description: "Complete 10 math units",
+    icon: Calculator,
+    progress: 2,
+    maxProgress: 10,
+    isUnlocked: false,
+    rarity: DASHBOARD_CONSTANTS.ACHIEVEMENT_RARITIES.EPIC,
+    points: 1000,
+  },
+] as const;

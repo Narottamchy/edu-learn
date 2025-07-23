@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { Link } from "next/link";
+import { ArrowRight, LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ProgressBadge, { MasteryLevel } from "./ProgressBadge";
+import ProgressBadge, { MasteryLevel } from "@/components/gamification/ProgressBadge";
 
 interface CourseCardProps {
   id: string;
   title: string;
   description?: string;
-  icon: React.ReactNode;
+  icon: LucideIcon;
   progress?: number;
   masteryLevel?: MasteryLevel;
   unitsCount?: number;
@@ -16,22 +16,22 @@ interface CourseCardProps {
   isStarted?: boolean;
 }
 
-const CourseCard: React.FC<CourseCardProps> = ({
+export default function CourseCard({
   id,
   title,
   description,
-  icon,
+  icon: Icon,
   progress = 0,
   masteryLevel = "notStarted",
   unitsCount,
   skillsCount,
   isStarted = false,
-}) => {
+}: CourseCardProps) {
   return (
     <div className="course-card flex flex-col h-full">
       <div className="p-4 flex items-start gap-3">
         <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-          {icon}
+          <Icon className="h-6 w-6" />
         </div>
         <div className="flex-1 min-w-0">
           <h3 className="font-semibold text-lg truncate">{title}</h3>
@@ -67,13 +67,11 @@ const CourseCard: React.FC<CourseCardProps> = ({
 
       <div className="mt-auto p-4 pt-2">
         <Button asChild className="w-full gap-1">
-          <Link to={`/courses/${id}`}>
+          <Link href={`/courses/${id}`}>
             {isStarted ? "Continue" : "Start"} <ArrowRight className="h-4 w-4" />
           </Link>
         </Button>
       </div>
     </div>
   );
-};
-
-export default CourseCard;
+}
